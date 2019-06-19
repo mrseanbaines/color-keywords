@@ -1,0 +1,44 @@
+{
+  "name": "react-typescript-starter",
+  "version": "1.0.0",
+  "description": "A basic starter template for React/TypeScript projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrseanbaines/react-typescript-starter.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "javascript",
+    "template",
+    "webpack"
+  ],
+  "author": "Sean Baines",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrseanbaines/react-typescript-starter/issues"
+  },
+  "homepage": "https://github.com/mrseanbaines/react-typescript-starter#readme",
+  "dependencies": {
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.5.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
+  }
+}
