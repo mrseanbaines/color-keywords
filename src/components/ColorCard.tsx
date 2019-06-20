@@ -10,10 +10,11 @@ interface ColorCardProps {
   keyword: string;
   hex: string;
   rgb: string;
+  onClick(value: string): void;
 }
 
-export default ({ keyword, hex, rgb }: ColorCardProps) => (
-  <ColorCardWrapper tabIndex={0}>
+export default ({ keyword, hex, rgb, onClick }: ColorCardProps) => (
+  <ColorCardWrapper tabIndex={0} onClick={() => onClick(hex)}>
     <div>
       <ColorCardTitle mb="1.5rem">{keyword}</ColorCardTitle>
       <ColorCardDetails>{hex.toUpperCase()}</ColorCardDetails>
