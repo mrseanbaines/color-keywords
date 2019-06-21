@@ -6,16 +6,16 @@ import {
   ColorCardDetails,
 } from '../styles/ColorCard';
 
-interface ColorCardProps {
+interface Props {
   keyword: string;
   hex: string;
   rgb: string;
-  onClick(value: string): void;
   copyFormat: string;
+  onClick: (value: string) => void;
 }
 
-export default ({ keyword, hex, rgb, onClick, copyFormat }: ColorCardProps) => {
-  const formats = {
+export default ({ keyword, hex, rgb, copyFormat, onClick }: Props) => {
+  const formats: any = {
     keyword,
     hex: hex.toUpperCase(),
     rgb: `rgb(${rgb})`,

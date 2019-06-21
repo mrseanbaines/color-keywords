@@ -4,10 +4,22 @@ import GlobalStyles from './styles/GlobalStyles';
 import ColorCards from './components/ColorCards';
 import Header from './components/Header';
 import ToastNotification from './components/ToastNotification';
-import * as sorts from './utils/sorts';
+import { alphabetically, byLuminosity } from './utils/sorts';
 
-class Index extends PureComponent {
-  constructor(props) {
+const sorts: any = {
+  alphabetically,
+  byLuminosity,
+};
+
+interface State {
+  activeSort: string;
+  copyFormat: string;
+  showToastNotification: boolean;
+  toastNotificationMessage: string;
+}
+
+class Index extends PureComponent<object, State> {
+  constructor(props: object) {
     super(props);
 
     this.state = {
@@ -19,9 +31,17 @@ class Index extends PureComponent {
   }
 
   updateInputValue = (e: any) => {
-    const { value, name } = e.target;
+    interface Target {
+      value: string;
+      name: string;
+    }
 
-    this.setState({ [name]: value });
+    const { value, name }: Target = e.target;
+
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   copyToClipboard = (value: string) => {
@@ -99,4 +119,4 @@ class Index extends PureComponent {
   }
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root') as HTMLElement);

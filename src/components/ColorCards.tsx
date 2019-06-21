@@ -10,13 +10,13 @@ interface ColorProps {
   rgb: string;
 }
 
-interface ColorCardsProps {
-  activeSort(a: ColorProps, b: ColorProps): number;
-  onClick(value: string): void;
+interface Props {
   copyFormat: string;
+  activeSort: (a: ColorProps, b: ColorProps) => number;
+  onClick: (value: string) => void;
 }
 
-export default ({ activeSort, onClick, copyFormat }: ColorCardsProps) => (
+export default ({ copyFormat, activeSort, onClick }: Props) => (
   <Container>
     <Flex flexWrap="wrap" p="16px">
       {[...colors].sort(activeSort).map(({ keyword, hex, rgb }: ColorProps) => (

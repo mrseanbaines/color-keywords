@@ -4,13 +4,15 @@ import { ToastNotificationWrapper } from '../styles/ToastNotification';
 
 const notificationRoot = document.getElementById('notification-root');
 
-interface ToastNotificationProps {
-  show: boolean;
+interface Props {
+  show?: boolean;
   message: string;
 }
 
-export default class extends PureComponent<ToastNotificationProps> {
-  constructor(props) {
+export default class extends PureComponent<Props> {
+  el: HTMLElement;
+
+  constructor(props: Props) {
     super(props);
 
     this.el = document.createElement('div');

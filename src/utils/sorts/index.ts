@@ -1,10 +1,10 @@
-interface ColorProps {
+interface Props {
   keyword: string;
   hex: string;
   rgb: string;
 }
 
-export const alphabetically = (a: ColorProps, b: ColorProps): number => {
+export const alphabetically = (a: Props, b: Props): number => {
   if (a.keyword > b.keyword) {
     return 1;
   }
@@ -14,8 +14,8 @@ export const alphabetically = (a: ColorProps, b: ColorProps): number => {
   return 0;
 };
 
-export const byLuminosity = (a: ColorProps, b: ColorProps): number => {
-  const getTotal = (color: ColorProps) =>
+export const byLuminosity = (a: Props, b: Props): number => {
+  const getTotal = (color: Props) =>
     color.rgb
       .split(',')
       .reduce((sum: number, value: string) => sum + parseInt(value, 10), 0);

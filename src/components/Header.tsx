@@ -7,13 +7,13 @@ import {
 } from '../styles/Header';
 import { Container } from '../styles/Grid';
 
-interface HeaderProps {
-  updateInputValue(): void;
+interface Props {
   activeSort: string;
   copyFormat: string;
+  updateInputValue: (e: any) => void;
 }
 
-export default ({ updateInputValue, activeSort, copyFormat }: HeaderProps) => (
+export default ({ activeSort, copyFormat, updateInputValue }: Props) => (
   <HeaderWrapper>
     <Container>
       <Box p="1rem 2rem">

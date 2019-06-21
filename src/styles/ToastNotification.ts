@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-interface ToastNotificationProps {
-  show: boolean;
+interface Props {
+  show?: boolean;
 }
 
-const ToastNotificationWrapper = styled.div<ToastNotificationProps>`
+const ToastNotificationWrapper = styled.div<Props>`
   background: lightgreen;
   color: white;
   font-weight: 600;
