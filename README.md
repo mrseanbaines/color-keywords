@@ -1,5 +1,7 @@
 # Color Keywords
 
+This is the repo for [Color Keywords](https://www.colorkeywords.com), a site which lists all of the available CSS color keywords, with sorting and copy to clipboard functionality.
+
 ![Demo screenshot](./demo-screenshot.png 'Demo screenshot')
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/19534308-23e8-46b2-90fb-c570bf57c533/deploy-status)](https://app.netlify.com/sites/color-keywords/deploys)
