@@ -52,7 +52,7 @@ class Index extends PureComponent<object, State> {
     copyTextarea.style.pointerEvents = 'none';
     document.body.appendChild(copyTextarea);
     copyTextarea.focus();
-    copyTextarea.select();
+    copyTextarea.setSelectionRange(0, value.length);
 
     try {
       document.execCommand('copy');
