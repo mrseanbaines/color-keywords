@@ -22,7 +22,17 @@ export default ({ keyword, hex, rgb, copyFormat, onClick }: Props) => {
   };
 
   return (
-    <ColorCardWrapper tabIndex={0} onClick={() => onClick(formats[copyFormat])}>
+    <ColorCardWrapper
+      tabIndex={0}
+      onClick={() => onClick(formats[copyFormat])}
+      onKeyPress={e => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+
+          onClick(formats[copyFormat]);
+        }
+      }}
+    >
       <div>
         <ColorCardTitle mb="1.5rem">{formats.keyword}</ColorCardTitle>
         <ColorCardDetails>{formats.hex}</ColorCardDetails>
