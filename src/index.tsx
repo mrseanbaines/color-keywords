@@ -4,6 +4,7 @@ import GlobalStyles from './styles/GlobalStyles';
 import ColorCards from './components/ColorCards';
 import Header from './components/Header';
 import ToastNotification from './components/ToastNotification';
+import Footer from './components/Footer';
 import { alphabetically, byLuminosity } from './utils/sorts';
 
 const sorts: any = {
@@ -108,6 +109,7 @@ class Index extends PureComponent<object, State> {
           onClick={this.copyToClipboard}
           copyFormat={copyFormat}
         />
+        <Footer />
         <ToastNotification
           show={showToastNotification}
           message={toastNotificationMessage}
