@@ -9,8 +9,10 @@ const ToastNotificationWrapper = styled.div<Props>`
   color: white;
   font-weight: 600;
   position: fixed;
-  bottom: 1rem;
-  right: ${({ show }) => (show ? '1rem' : 0)};
+  max-width: calc(100% - 2rem);
+  margin: 1rem;
+  bottom: 0;
+  right: ${({ show }) => (show ? 0 : '-1rem')};
   opacity: ${({ show }) => (show ? 1 : 0)};
   pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
   padding: 1rem 2rem;
