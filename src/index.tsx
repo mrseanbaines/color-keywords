@@ -88,6 +88,7 @@ class Index extends PureComponent {
         <ColorCards
           activeSort={sorts[activeSort]}
           onClick={this.copyToClipboard}
+          copyFormat={copyFormat}
         />
         <ToastNotification
           show={showToastNotification}

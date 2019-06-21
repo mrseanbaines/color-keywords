@@ -13,14 +13,21 @@ interface ColorProps {
 interface ColorCardsProps {
   activeSort(a: ColorProps, b: ColorProps): number;
   onClick(value: string): void;
+  copyFormat: string;
 }
 
-export default ({ activeSort, onClick }: ColorCardsProps) => (
+export default ({ activeSort, onClick, copyFormat }: ColorCardsProps) => (
   <Container>
     <Flex flexWrap="wrap" p="16px">
       {[...colors].sort(activeSort).map(({ keyword, hex, rgb }: ColorProps) => (
         <Box key={keyword} width={[1, 1 / 2, 1 / 3]} p="16px">
-          <ColorCard keyword={keyword} hex={hex} rgb={rgb} onClick={onClick} />
+          <ColorCard
+            keyword={keyword}
+            hex={hex}
+            rgb={rgb}
+            onClick={onClick}
+            copyFormat={copyFormat}
+          />
         </Box>
       ))}
     </Flex>
