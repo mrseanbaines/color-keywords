@@ -11,16 +11,17 @@ class Index extends PureComponent {
     super(props);
 
     this.state = {
-      activeSort: sorts.alphabetically,
+      activeSort: 'alphabetically',
+      copyFormat: 'keyword',
       showToastNotification: false,
       toastNotificationMessage: '',
     };
   }
 
-  updateActiveSort = (e: any) => {
-    const { value } = e.target;
+  updateInputValue = (e: any) => {
+    const { value, name } = e.target;
 
-    this.setState({ activeSort: sorts[value] });
+    this.setState({ [name]: value });
   };
 
   copyToClipboard = (value: string) => {
@@ -70,16 +71,24 @@ class Index extends PureComponent {
 
   render() {
     const {
-      activeSort,
       showToastNotification,
       toastNotificationMessage,
+      activeSort,
+      copyFormat,
     } = this.state;
 
     return (
       <>
         <GlobalStyles />
-        <Header updateActiveSort={this.updateActiveSort} />
-        <ColorCards activeSort={activeSort} onClick={this.copyToClipboard} />
+        <Header
+          updateInputValue={this.updateInputValue}
+          activeSort={activeSort}
+          copyFormat={copyFormat}
+        />
+        <ColorCards
+          activeSort={sorts[activeSort]}
+          onClick={this.copyToClipboard}
+        />
         <ToastNotification
           show={showToastNotification}
           message={toastNotificationMessage}

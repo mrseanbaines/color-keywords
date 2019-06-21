@@ -11,13 +11,15 @@ const HeaderWrapper = styled.header`
 `;
 
 const HeaderLabel = styled.label`
-  margin-right: 0.5rem;
+  display: inline-block;
 `;
 
 const HeaderSelectWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   position: relative;
+  width: 100%;
+  flex: 1;
 
   select {
     -webkit-appearance: none;
@@ -25,15 +27,15 @@ const HeaderSelectWrapper = styled.div`
     border: none;
     border-radius: 0.25rem;
     font-size: 1rem;
-    padding: 0.5rem;
-    padding-right: 1.5rem;
+    padding: 0 1.5rem 0 0.5rem;
+    line-height: 2rem;
     font-family: inherit;
-    line-height: inherit;
     color: inherit;
     cursor: pointer;
     border: 1px dashed lightgray;
     outline: none;
     font-weight: 400;
+    width: 100%;
 
     :focus,
     :active {
