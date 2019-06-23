@@ -2,7 +2,13 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { ToastNotificationWrapper } from '../styles/ToastNotification';
 
-const notificationRoot = document.getElementById('notification-root');
+let notificationRoot = document.getElementById('notification-root');
+
+if (!notificationRoot) {
+  notificationRoot = document.createElement('div');
+  notificationRoot.setAttribute('id', 'notification-root');
+  document.body.appendChild(notificationRoot);
+}
 
 interface Props {
   show?: boolean;
