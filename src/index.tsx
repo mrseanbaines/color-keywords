@@ -6,15 +6,21 @@ import Header from './components/Header';
 import ToastNotification from './components/ToastNotification';
 import Footer from './components/Footer';
 import { alphabetically, byLuminosity } from './utils/sorts';
+import { ColorProps } from './types';
 
-const sorts: any = {
+interface SortProps {
+  alphabetically: (a: ColorProps, b: ColorProps) => number;
+  byLuminosity: (a: ColorProps, b: ColorProps) => number;
+}
+
+const sorts: SortProps = {
   alphabetically,
   byLuminosity,
 };
 
 interface State {
-  activeSort: string;
-  copyFormat: string;
+  activeSort: keyof SortProps;
+  copyFormat: keyof ColorProps;
   showToastNotification: boolean;
   toastNotificationMessage: string;
 }
@@ -34,7 +40,7 @@ class Index extends PureComponent<object, State> {
   updateInputValue = (e: any) => {
     interface Target {
       value: string;
-      name: string;
+      name: 'activeSort' | 'copyFormat';
     }
 
     const { value, name }: Target = e.target;

@@ -5,17 +5,15 @@ import {
   ColorCardTitle,
   ColorCardDetails,
 } from '../styles/ColorCard';
+import { ColorProps } from '../types';
 
-interface Props {
-  keyword: string;
-  hex: string;
-  rgb: string;
-  copyFormat: string;
+interface Props extends ColorProps {
+  copyFormat: keyof ColorProps;
   onClick: (value: string) => void;
 }
 
 export default ({ keyword, hex, rgb, copyFormat, onClick }: Props) => {
-  const formats: any = {
+  const formats = {
     keyword,
     hex: hex.toUpperCase(),
     rgb: `rgb(${rgb})`,

@@ -3,15 +3,10 @@ import { Flex, Box } from '@rebass/grid';
 import colors from '../colors.json';
 import ColorCard from '../components/ColorCard';
 import { Container } from '../styles/Grid';
-
-interface ColorProps {
-  keyword: string;
-  hex: string;
-  rgb: string;
-}
+import { ColorProps } from '../types';
 
 interface Props {
-  copyFormat: string;
+  copyFormat: keyof ColorProps;
   activeSort: (a: ColorProps, b: ColorProps) => number;
   onClick: (value: string) => void;
 }
@@ -19,7 +14,7 @@ interface Props {
 export default ({ copyFormat, activeSort, onClick }: Props) => (
   <Container>
     <Flex flexWrap="wrap" p="16px">
-      {[...colors].sort(activeSort).map(({ keyword, hex, rgb }: ColorProps) => (
+      {[...colors].sort(activeSort).map(({ keyword, hex, rgb }) => (
         <Box key={keyword} width={[1, 1 / 2, 1 / 3]} p="16px">
           <ColorCard
             keyword={keyword}
