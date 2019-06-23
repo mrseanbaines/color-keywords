@@ -1,11 +1,11 @@
+import { Box, Flex } from '@rebass/grid';
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
+import { Container } from '../styles/Grid';
 import {
-  HeaderWrapper,
   HeaderLabel,
   HeaderSelectWrapper,
+  HeaderWrapper,
 } from '../styles/Header';
-import { Container } from '../styles/Grid';
 
 interface Props {
   activeSort: string;

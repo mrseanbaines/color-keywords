@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  ColorCardWrapper,
   ColorCardColor,
-  ColorCardTitle,
   ColorCardDetails,
+  ColorCardTitle,
+  ColorCardWrapper,
 } from '../styles/ColorCard';
 import { ColorProps } from '../types';
 
@@ -12,10 +12,10 @@ interface Props extends ColorProps {
   onClick: (value: string) => void;
 }
 
-export default ({ keyword, hex, rgb, copyFormat, onClick }: Props) => {
+export default ({ hex, keyword, rgb, copyFormat, onClick }: Props) => {
   const formats = {
-    keyword,
     hex: hex.toUpperCase(),
+    keyword,
     rgb: `rgb(${rgb})`,
   };
 

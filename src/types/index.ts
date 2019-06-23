@@ -1,5 +1,5 @@
 export interface ColorProps {
-  keyword: string;
   hex: string;
+  keyword: string;
   rgb: string;
 }

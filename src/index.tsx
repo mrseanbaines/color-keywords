@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
-import GlobalStyles from './styles/GlobalStyles';
 import ColorCards from './components/ColorCards';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import ToastNotification from './components/ToastNotification';
-import Footer from './components/Footer';
-import { alphabetically, byLuminosity } from './utils/sorts';
+import GlobalStyles from './styles/GlobalStyles';
 import { ColorProps } from './types';
+import { alphabetically, byLuminosity } from './utils/sorts';
 
 interface SortProps {
   alphabetically: (a: ColorProps, b: ColorProps) => number;
@@ -37,7 +37,7 @@ class Index extends PureComponent<object, State> {
     };
   }
 
-  updateInputValue = (e: any) => {
+  public updateInputValue = (e: any) => {
     interface Target {
       value: string;
       name: 'activeSort' | 'copyFormat';
@@ -51,7 +51,7 @@ class Index extends PureComponent<object, State> {
     }));
   };
 
-  copyToClipboard = (value: string) => {
+  public copyToClipboard = (value: string) => {
     const copyTextarea = document.createElement('textarea');
     copyTextarea.value = value;
     copyTextarea.style.position = 'fixed';
@@ -72,7 +72,7 @@ class Index extends PureComponent<object, State> {
     }
   };
 
-  showToastNotification = async (message: string) => {
+  public showToastNotification = async (message: string) => {
     const delay = (ms: number) =>
       new Promise(resolve => setTimeout(resolve, ms));
 
@@ -94,7 +94,7 @@ class Index extends PureComponent<object, State> {
     });
   };
 
-  render() {
+  public render() {
     const {
       showToastNotification,
       toastNotificationMessage,

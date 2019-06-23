@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default class extends PureComponent<Props> {
-  el: HTMLElement;
+  private el: HTMLElement;
 
   constructor(props: Props) {
     super(props);
@@ -18,15 +18,15 @@ export default class extends PureComponent<Props> {
     this.el = document.createElement('div');
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     notificationRoot.appendChild(this.el);
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     notificationRoot.removeChild(this.el);
   }
 
-  render() {
+  public render() {
     const { show, message } = this.props;
 
     return ReactDOM.createPortal(
