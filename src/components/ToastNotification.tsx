@@ -2,7 +2,9 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { ToastNotificationWrapper } from '../styles/ToastNotification';
 
-let notificationRoot: HTMLElement = document.getElementById('notification-root');
+let notificationRoot: HTMLElement = document.getElementById(
+  'notification-root',
+);
 
 if (!notificationRoot) {
   notificationRoot = document.createElement('div');
@@ -24,11 +26,11 @@ export default class extends PureComponent<Props> {
     this.el = document.createElement('div');
   }
 
-  public componentDidMount() {
+  public componentDidMount(): void {
     notificationRoot.appendChild(this.el);
   }
 
-  public componentWillUnmount() {
+  public componentWillUnmount(): void {
     notificationRoot.removeChild(this.el);
   }
 

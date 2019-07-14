@@ -36,7 +36,7 @@ export default class extends PureComponent<object, State> {
     };
   }
 
-  public updateInputValue = (e: any) => {
+  public updateInputValue = (e: any): void => {
     interface Target {
       value: string;
       name: 'activeSort' | 'copyFormat';
@@ -50,7 +50,7 @@ export default class extends PureComponent<object, State> {
     }));
   };
 
-  public copyToClipboard = (value: string) => {
+  public copyToClipboard = (value: string): void => {
     const copyTextarea: HTMLTextAreaElement = document.createElement(
       'textarea',
     );
