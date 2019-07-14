@@ -1,4 +1,4 @@
-import { shallow, render } from 'enzyme';
+import { render, shallow } from 'enzyme';
 import React from 'react';
 import ToastNotification from '../../components/ToastNotification';
 

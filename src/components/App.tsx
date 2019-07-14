@@ -51,7 +51,9 @@ export default class extends PureComponent<object, State> {
   };
 
   public copyToClipboard = (value: string) => {
-    const copyTextarea = document.createElement('textarea');
+    const copyTextarea: HTMLTextAreaElement = document.createElement(
+      'textarea',
+    );
     copyTextarea.value = value;
     copyTextarea.style.position = 'fixed';
     copyTextarea.style.opacity = '0';

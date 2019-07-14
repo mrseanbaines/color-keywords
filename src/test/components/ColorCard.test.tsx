@@ -68,7 +68,7 @@ describe('<ColorCard />', () => {
     mockOnClick.mockClear();
   });
 
-  it("doesn't call onClick on other keydown", () => {
+  it('doesn\'t call onClick on other keydown', () => {
     const wrapper = shallow(<ColorCard {...props} />);
 
     expect(props.onClick).not.toHaveBeenCalled();

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { ToastNotificationWrapper } from '../styles/ToastNotification';
 
-let notificationRoot = document.getElementById('notification-root');
+let notificationRoot: HTMLElement = document.getElementById('notification-root');
 
 if (!notificationRoot) {
   notificationRoot = document.createElement('div');
