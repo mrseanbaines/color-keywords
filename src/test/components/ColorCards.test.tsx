@@ -4,9 +4,9 @@ import ColorCards from '../../components/ColorCards';
 import { ColorProps } from '../../types';
 
 interface Props {
-  copyFormat: keyof ColorProps;
-  activeSort: (a: ColorProps, b: ColorProps) => number;
-  onClick: (value: string) => void;
+  readonly copyFormat: keyof ColorProps;
+  readonly activeSort: (a: ColorProps, b: ColorProps) => number;
+  readonly onClick: (value: string) => void;
 }
 
 const props: Props = {

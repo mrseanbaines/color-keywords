@@ -8,8 +8,8 @@ import {
 import { ColorProps } from '../types';
 
 interface Props extends ColorProps {
-  copyFormat: keyof ColorProps;
-  onClick: (value: string) => void;
+  readonly copyFormat: keyof ColorProps;
+  readonly onClick: (value: string) => void;
 }
 
 export default ({ hex, keyword, rgb, copyFormat, onClick }: Props) => {

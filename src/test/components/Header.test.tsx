@@ -3,9 +3,9 @@ import React from 'react';
 import Header from '../../components/Header';
 
 interface Props {
-  activeSort: string;
-  copyFormat: string;
-  updateInputValue: (e: any) => void;
+  readonly activeSort: string;
+  readonly copyFormat: string;
+  readonly updateInputValue: (e: any) => void;
 }
 
 const props: Props = {

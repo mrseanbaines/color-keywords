@@ -4,8 +4,8 @@ import ColorCard from '../../components/ColorCard';
 import { ColorProps } from '../../types';
 
 interface Props extends ColorProps {
-  copyFormat: keyof ColorProps;
-  onClick: (value: string) => void;
+  readonly copyFormat: keyof ColorProps;
+  readonly onClick: (value: string) => void;
 }
 
 const mockOnClick = jest.fn();

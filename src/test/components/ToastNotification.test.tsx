@@ -3,8 +3,8 @@ import React from 'react';
 import ToastNotification from '../../components/ToastNotification';
 
 interface Props {
-  show?: boolean;
-  message: string;
+  readonly show?: boolean;
+  readonly message: string;
 }
 
 const props: Props = {

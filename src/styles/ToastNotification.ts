@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-  show?: boolean;
+  readonly show?: boolean;
 }
 
 const ToastNotificationWrapper = styled.div<Props>`

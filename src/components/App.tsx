@@ -8,8 +8,8 @@ import Header from './Header';
 import ToastNotification from './ToastNotification';
 
 interface SortProps {
-  alphabetically: (a: ColorProps, b: ColorProps) => number;
-  byLuminosity: (a: ColorProps, b: ColorProps) => number;
+  readonly alphabetically: (a: ColorProps, b: ColorProps) => number;
+  readonly byLuminosity: (a: ColorProps, b: ColorProps) => number;
 }
 
 const sorts: SortProps = {
@@ -18,10 +18,10 @@ const sorts: SortProps = {
 };
 
 interface State {
-  activeSort: keyof SortProps;
-  copyFormat: keyof ColorProps;
-  showToastNotification: boolean;
-  toastNotificationMessage: string;
+  readonly activeSort: keyof SortProps;
+  readonly copyFormat: keyof ColorProps;
+  readonly showToastNotification: boolean;
+  readonly toastNotificationMessage: string;
 }
 
 export default class extends PureComponent<object, State> {
@@ -38,8 +38,8 @@ export default class extends PureComponent<object, State> {
 
   public updateInputValue = (e: any): void => {
     interface Target {
-      value: string;
-      name: 'activeSort' | 'copyFormat';
+      readonly value: string;
+      readonly name: 'activeSort' | 'copyFormat';
     }
 
     const { value, name }: Target = e.target;

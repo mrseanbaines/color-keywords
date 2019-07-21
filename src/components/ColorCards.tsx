@@ -6,9 +6,9 @@ import { Container } from '../styles/Grid';
 import { ColorProps } from '../types';
 
 interface Props {
-  copyFormat: keyof ColorProps;
-  activeSort: (a: ColorProps, b: ColorProps) => number;
-  onClick: (value: string) => void;
+  readonly copyFormat: keyof ColorProps;
+  readonly activeSort: (a: ColorProps, b: ColorProps) => number;
+  readonly onClick: (value: string) => void;
 }
 
 export default ({ copyFormat, activeSort, onClick }: Props) => (

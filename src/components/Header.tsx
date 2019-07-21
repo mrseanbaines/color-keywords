@@ -8,9 +8,9 @@ import {
 } from '../styles/Header';
 
 interface Props {
-  activeSort: string;
-  copyFormat: string;
-  updateInputValue: (e: any) => void;
+  readonly activeSort: string;
+  readonly copyFormat: string;
+  readonly updateInputValue: (e: any) => void;
 }
 
 export default ({ activeSort, copyFormat, updateInputValue }: Props) => (

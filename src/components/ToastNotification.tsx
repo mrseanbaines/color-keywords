@@ -13,8 +13,8 @@ if (!notificationRoot) {
 }
 
 interface Props {
-  show?: boolean;
-  message: string;
+  readonly show?: boolean;
+  readonly message: string;
 }
 
 export default class extends PureComponent<Props> {
