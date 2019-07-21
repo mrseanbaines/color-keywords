@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import ColorCards from '../../components/ColorCards';
-import { ColorProps } from '../../types';
+import { ColorProps, SortFunc } from '../../types';
 
 interface Props {
   readonly copyFormat: keyof ColorProps;
-  readonly activeSort: (a: ColorProps, b: ColorProps) => number;
+  readonly activeSort: SortFunc;
   readonly onClick: (value: string) => void;
 }
 

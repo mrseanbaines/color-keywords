@@ -1,6 +1,6 @@
-import { ColorProps } from '../../types';
+import { ColorProps, SortFunc } from '../../types';
 
-export const alphabetically = (a: ColorProps, b: ColorProps): number => {
+export const alphabetically: SortFunc = (a, b) => {
   if (a.keyword > b.keyword) {
     return 1;
   }
@@ -10,7 +10,7 @@ export const alphabetically = (a: ColorProps, b: ColorProps): number => {
   return 0;
 };
 
-export const byLuminosity = (a: ColorProps, b: ColorProps): number => {
+export const byLuminosity: SortFunc = (a, b) => {
   const getTotal = (color: ColorProps) =>
     color.rgb
       .split(',')

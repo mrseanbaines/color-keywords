@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
-import { ColorProps } from '../types';
+import { ColorProps, SortFunc } from '../types';
 import { alphabetically, byLuminosity } from '../utils/sorts';
 import ColorCards from './ColorCards';
 import Footer from './Footer';
@@ -8,8 +8,8 @@ import Header from './Header';
 import ToastNotification from './ToastNotification';
 
 interface SortProps {
-  readonly alphabetically: (a: ColorProps, b: ColorProps) => number;
-  readonly byLuminosity: (a: ColorProps, b: ColorProps) => number;
+  readonly alphabetically: SortFunc;
+  readonly byLuminosity: SortFunc;
 }
 
 const sorts: SortProps = {
