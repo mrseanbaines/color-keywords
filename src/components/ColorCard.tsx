@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   ColorCardColor,
   ColorCardDetails,
@@ -12,7 +12,7 @@ interface Props extends ColorProps {
   readonly onClick: (value: string) => void;
 }
 
-export default ({ hex, keyword, rgb, copyFormat, onClick }: Props) => {
+const ColorCard: FC<Props> = ({ hex, keyword, rgb, copyFormat, onClick }) => {
   const formats = {
     hex: hex.toUpperCase(),
     keyword,
@@ -40,3 +40,5 @@ export default ({ hex, keyword, rgb, copyFormat, onClick }: Props) => {
     </ColorCardWrapper>
   );
 };
+
+export default ColorCard;

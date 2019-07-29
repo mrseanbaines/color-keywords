@@ -1,5 +1,5 @@
 import { Box, Flex } from '@rebass/grid';
-import React from 'react';
+import React, { FC } from 'react';
 import colors from '../colors.json';
 import ColorCard from '../components/ColorCard';
 import { Container } from '../styles/Grid';
@@ -11,7 +11,7 @@ interface Props {
   readonly onClick: (value: string) => void;
 }
 
-export default ({ copyFormat, activeSort, onClick }: Props) => (
+const ColorCards: FC<Props> = ({ copyFormat, activeSort, onClick }) => (
   <Container>
     <Flex flexWrap="wrap" p="16px">
       {[...colors].sort(activeSort).map(({ hex, keyword, rgb }) => (
@@ -28,3 +28,5 @@ export default ({ copyFormat, activeSort, onClick }: Props) => (
     </Flex>
   </Container>
 );
+
+export default ColorCards;

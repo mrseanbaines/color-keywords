@@ -1,5 +1,5 @@
 import { Box, Flex } from '@rebass/grid';
-import React from 'react';
+import React, { FC } from 'react';
 import { Container } from '../styles/Grid';
 import {
   HeaderLabel,
@@ -13,7 +13,7 @@ interface Props {
   readonly updateInputValue: (e: any) => void;
 }
 
-export default ({ activeSort, copyFormat, updateInputValue }: Props) => (
+const Header: FC<Props> = ({ activeSort, copyFormat, updateInputValue }) => (
   <HeaderWrapper>
     <Container>
       <Box p="1rem 2rem">
@@ -69,3 +69,5 @@ export default ({ activeSort, copyFormat, updateInputValue }: Props) => (
     </Container>
   </HeaderWrapper>
 );
+
+export default Header;
