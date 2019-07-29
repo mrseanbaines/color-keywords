@@ -2,11 +2,15 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { ToastNotificationWrapper } from '../styles/ToastNotification';
 
-let notificationRoot: HTMLElement = document.getElementById(
+const existingNotificationRoot: HTMLElement | null = document.getElementById(
   'notification-root',
 );
 
-if (!notificationRoot) {
+let notificationRoot: HTMLElement;
+
+if (existingNotificationRoot) {
+  notificationRoot = existingNotificationRoot;
+} else {
   notificationRoot = document.createElement('div');
   notificationRoot.setAttribute('id', 'notification-root');
   document.body.appendChild(notificationRoot);

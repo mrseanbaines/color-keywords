@@ -1,4 +1,4 @@
-import { render, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import ToastNotification from '../../components/ToastNotification';
 
@@ -22,7 +22,19 @@ describe('<ToastNotification />', () => {
   });
 
   it('creates notification DOM element on mount', () => {
-    const notificationRoot = document.getElementById('notification-root');
+    const existingNotificationRoot: HTMLElement | null = document.getElementById(
+      'notification-root',
+    );
+
+    let notificationRoot: HTMLElement;
+
+    if (existingNotificationRoot) {
+      notificationRoot = existingNotificationRoot;
+    } else {
+      notificationRoot = document.createElement('div');
+      notificationRoot.setAttribute('id', 'notification-root');
+      document.body.appendChild(notificationRoot);
+    }
 
     expect(notificationRoot.children.length).toBe(0);
 
@@ -35,7 +47,19 @@ describe('<ToastNotification />', () => {
 
   it('removes notification DOM element on unmount', () => {
     const wrapper = shallow(<ToastNotification {...props} />);
-    const notificationRoot = document.getElementById('notification-root');
+    const existingNotificationRoot: HTMLElement | null = document.getElementById(
+      'notification-root',
+    );
+
+    let notificationRoot: HTMLElement;
+
+    if (existingNotificationRoot) {
+      notificationRoot = existingNotificationRoot;
+    } else {
+      notificationRoot = document.createElement('div');
+      notificationRoot.setAttribute('id', 'notification-root');
+      document.body.appendChild(notificationRoot);
+    }
 
     expect(notificationRoot.children.length).toBe(1);
 
