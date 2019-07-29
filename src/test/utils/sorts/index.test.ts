@@ -1,7 +1,7 @@
 import { ColorProps } from '../../../types';
 import { alphabetically, byLuminosity } from '../../../utils/sorts';
 
-const colors: ColorProps[] = [
+const colors: ReadonlyArray<ColorProps> = [
   {
     hex: '#000000',
     keyword: 'black',
@@ -19,7 +19,7 @@ const colors: ColorProps[] = [
   },
 ];
 
-const sortedAlphabetically: ColorProps[] = [
+const sortedAlphabetically: ReadonlyArray<ColorProps> = [
   {
     hex: '#000000',
     keyword: 'black',
@@ -37,7 +37,7 @@ const sortedAlphabetically: ColorProps[] = [
   },
 ];
 
-const sortedByLuminosity: ColorProps[] = [
+const sortedByLuminosity: ReadonlyArray<ColorProps> = [
   {
     hex: '#ffffff',
     keyword: 'white',
@@ -55,7 +55,7 @@ const sortedByLuminosity: ColorProps[] = [
   },
 ];
 
-const equalItems: ColorProps[] = [
+const equalItems: ReadonlyArray<ColorProps> = [
   {
     hex: '#ffffff',
     keyword: 'white',
