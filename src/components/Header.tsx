@@ -1,5 +1,5 @@
-import { Box, Flex } from '@rebass/grid';
 import React, { FC } from 'react';
+import { Box, Flex } from '@rebass/grid';
 import { Container } from '../styles/Grid';
 import {
   HeaderLabel,
